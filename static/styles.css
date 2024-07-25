@@ -140,11 +140,6 @@ footer{
     line-height: 1;
     color: #34d399;
 }
-
-#download-btn{
-    margin-top: 10px;
-}
-
 .output-section{
     width: 100%;
     max-width: 1000px;
@@ -154,6 +149,7 @@ footer{
     box-shadow: 0 0 20px rgba(0,0,0, 0.5);
     overflow: auto;
     min-height: 200px;
+    margin-bottom: 10px;
 }
 .option-row{
     display: flex;
@@ -238,17 +234,22 @@ footer{
     margin-bottom: 20px;
     overflow-wrap: break-word;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   
   }
   .team-member {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
+    display: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.5);
   }
   .team-member img {
-    width: 60px;
-    height: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
+    max-width: 80px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    margin-right: 15px;
     border: 2px solid #34d399;
   }
   ul, ol {
@@ -279,6 +280,11 @@ footer{
   code {
     font-family: 'Courier New', monospace;
     color: #34d399;
+  }
+  .teamm{
+    display: flex;
+    justify-content: space-between;
+    
   }
 
 /*Media queries*/
@@ -327,8 +333,12 @@ footer{
       font-size: 10px;
       overflow-x: auto;
     }
-    .section{
+        .section{
       overflow: break-word;
+    }
+    .teamm{
+      display: inline-block;
+      margin-left: 30%;
     }
 }
 @media (max-width: 600px) {
@@ -354,10 +364,10 @@ footer{
     font-family: monospace;
     white-space: pre;
     font-weight: 600;
-    font-size: 8px;
+    font-size: 6px;
     line-height: 1;
     color: #34d399;
-    overflow: hidden;
+    overflow: auto;
     text-align: center;
     }
     .form-container, .output-section {
@@ -384,5 +394,13 @@ footer{
      }
     .section{
       overflow: break-word;
+      
+    }
+
+    .teamm{
+      display: inline-block;
+      align-items: center;
+
+     margin: auto;
     }
 }
