@@ -71,7 +71,7 @@ func ArtHandler(w http.ResponseWriter, r *http.Request) {
 	ascii_Art, err := function.Input(text, banner)
 
 	if text == "" || banner == "" {
-		ErrorPageHandler(w, http.StatusBadRequest, "400 Bad Request")
+		ErrorPageHandler(w, http.StatusNotFound, "404 Not Found")
 		return
 	}
 
@@ -91,7 +91,7 @@ func ArtHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		ErrorPageHandler(w, http.StatusInternalServerError, "Bad Request")
+		ErrorPageHandler(w, http.StatusInternalServerError, "500 Internal Server Error")
 		return
 	}
 
