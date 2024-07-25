@@ -15,7 +15,7 @@ func main() {
 	fs := http.FileServer(http.Dir("static"))
 	assets := http.FileServer(http.Dir("assets"))
 
-	// http.HandleFunc("/", handler.HomeHandler)
+	
 	http.Handle("/assets/", http.StripPrefix("/assets/", assets))
 	http.HandleFunc("/ascii-art", handler.ArtHandler)
 	http.HandleFunc("/about", handler.AboutHandler)
