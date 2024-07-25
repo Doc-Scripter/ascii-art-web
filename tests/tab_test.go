@@ -18,10 +18,10 @@ type testTab struct {
 
 var testTabs = []testTab{
 	{
-		text:        "hello\tthere ",
-		banner:      "standard",
-		expected:    Join("../ascii/resources/test7.txt"),
-		expectedError:  false,
+		text:          "hello\tthere ",
+		banner:        "standard",
+		expected:      Join("../ascii/resources/test7.txt"),
+		expectedError: false,
 	},
 }
 
@@ -70,5 +70,3 @@ func TestTab(t *testing.T) {
 		})
 	}
 }
-
-
