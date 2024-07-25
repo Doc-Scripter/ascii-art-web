@@ -3,10 +3,18 @@
 ASCII Art WEb is a dynamic web application that allows users to create ASCII ART.It consists in creating and running a server, in which it will be possible to use a web GUI (graphical user interface) version of the last project ascii-art.
 
 
-## Description
+# TABLE OF CONTENT
+
+- [Indroduction](#Introduction)
+- [Usage](#Usage)
+- [#implementation_detail:_algorithm](#implementation)
+- [Authors](#Author)
+
+
+## Introduction
 Ascii-art Web is a program that creates a webpage for clients to generate Ascii-Art of the message you enter. There are various aspects that can be implemented where the user/client is presented an area for them to type their desire message. If the character is among the printable ASCII range  it is represented within the art as well as numerics and symbols.
 
-## Features 
+### Features 
 + Convert text to ASCII art using varoius banner files
 + Interactive web interface for  creating ASCII art.
 + Responsive design for desktop and mobile devices.
@@ -118,26 +126,93 @@ The user can click `go back` to return home to try using the program again
 ![internalservererror](/assets/images/ISE.png)
 
 ## Implementation detail: algorithm
+
 * ### assets
+#### Favicon
+It's an icon that represents a specific page and is unique for every website. If you look at the highlighted icon on the image below, the highlighted favicon helps you find the website easily.
 
 
+![alt text](<assets/images/favicon.png>)
+
+* #### Images
+    Images used within the project are stored here.
+* ### ascii
+
+Ascii folder hold the basic project for producing the art
+* #### Art
+
+Art combiness the line of Ascii art per slices of the input string and predefined mapping.
+
+* #### Acsii Art Map
+
+AsciiArt maps uses maps to map a particular character to it's art representation.
+
+* #### Ascii Combine
+
+Ascii Combine Handles newlines aspect in input string,combines all input slices' asciiArt
+
+* #### CheckAssets
+
+CheckAsets compares local banner files to the ones in the cloud and updates them if necessary.
+
+* #### Input
+
+Input handles the command feed by the user on the webpage specifically the type of banner they want to use and the text they want to change.
+
+* #### Tab
+
+Tab handles the control character /t which print double space in the ascii folder.
+
+* #### Resources
+
+Resources folder holds all the text resources we use to either text or
 
 
-* ### functions
+* ### Handler
+* #### func AboutHandler(w http.ResponseWriter, r *http.Request)
+
+    Handles any error that occures while trying to run the about page.
+
+* #### func HomeHandler(w http.ResponseWriter, r *http.Request) 
+
+    Handles any error that occures while trying to run the homepage
+
+* #### func InstructionsHandler(w http.ResponseWriter, r *http.Request)
+
+   Handles any error that occures while trying to run the instruction page.
+
+* #### func ErrorPageHandler(w http.ResponseWriter, statusCode int, message string)
+
+    Displays any errors that occur in any of the webpage.
+
+* #### func ArtHandler(w http.ResponseWriter, r *http.Request) 
+
+    Handles any error that occures while trying to run the ascii function and the character is not printable.
+
+#### func ArtHandler(w http.ResponseWriter, r *http.Request) 
+
+### Static
+* #### err.sss
+    Handles consistency in the program
+
+* #### styles.css
+    Handles the stylesheets used in the website.
 
 
+* ### Template
+Each template here handles the design and layout of the specified pages which are 
+    1. about.html for the about page
+    2. error.html for the error page
+    3. index.html for the home page 
+    4. instructions.html for the instruction page
 
-* ### server
+* ### Tests
 
-
-
-
-* ### template
-
+This folder handles the test files used to test the various parts of the code to confirm if each part of the code is working smoothly.
 
 * ### main.go
 
-
+This is where the handlers in handler file are called and the where the server is run from.
 
 ## Limitations
 This project can only print characters in the printable ASCII range from space to tide `~`. When other characters outside the range are used, the program returns a bad request error.
