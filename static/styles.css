@@ -236,6 +236,7 @@ footer{
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
+    overflow-wrap: break-word;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   .team-member {
@@ -326,6 +327,9 @@ footer{
       font-size: 10px;
       overflow-x: auto;
     }
+    .section{
+      overflow: break-word;
+    }
 }
 @media (max-width: 600px) {
     .logo{
@@ -360,6 +364,7 @@ footer{
         padding: 15px;
         width: 90%;
         flex-direction: column;
+        overflow: auto;
     }
     .output-section textarea{
         width: 96%;
@@ -377,4 +382,7 @@ footer{
          width: 100%;
          justify-content: space-between;
      }
+    .section{
+      overflow: break-word;
+    }
 }
